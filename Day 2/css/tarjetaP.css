@@ -1,0 +1,136 @@
+body {
+    background-image: url("../img/koi.png");
+    margin: 0; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;   
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }  
+  .my-card {
+    width: 300px; 
+    height: 300px; 
+    position: relative;
+    background: rgba(0, 0, 0, 0.062); 
+    border: 2px solid rgba(25, 41, 79, 0.156);
+    border-radius: 3px;
+    box-shadow: 0 0 20px rgba(51, 70, 162, 0.5);
+    perspective: 1000px; /* Establece la perspectiva para la animación 3D */
+    padding-top: 4px;
+    padding-right: 2px;
+  }
+  
+  .my-card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent; 
+    box-shadow: 0 0 20px rgba(29, 38, 121, 0.5), 
+                0 0 10px rgba(0, 0, 0, 0.3); 
+    border-radius: 3px; 
+    
+  }
+  /*transición*/
+  .front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; 
+    transition: transform 0.9s; 
+    border-radius: 10px; 
+  }
+  h1{
+    font-size: 24px;
+  }
+  /* Vuelta*/
+  .back {
+    transform: rotateY(180deg); 
+  }
+  .back h1 {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  .my-card:hover .front {
+    transform: rotateY(180deg); 
+  }
+  
+  .my-card:hover .back {
+    transform: rotateY(360deg); 
+  }
+  
+  .my-card.hovered .back {
+    transform: rotateY(180deg); 
+  }
+  
+  .profile-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+    border-radius: 10%;
+    overflow: hidden;
+    width: 200px;
+    height: 150px;
+    margin-left: 50px;
+    border-style: dashed;
+    border-color: rgb(0, 0, 0);
+    border-width: 4px;
+    box-shadow: 0px 0px 10px rgb(234, 237, 255);
+  }
+  
+  .data-section {
+    flex: 2;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  .data-section h1, .data-section h4 {
+    font-family: "Sofia", sans-serif;
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(10deg, transparent, #213357, transparent);
+    margin: 10px 0;
+  }
+  
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .social-media {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    opacity: 90%;
+  }
+  
+  .social-icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+    transition: background-color 0.9s, color 0.9s; 
+  }
+  
+  .social-icon:hover {
+    background-color: #0000003c; 
+  }
+  .social-icon a {
+    font-size: 20px; 
+    font-family: 'Roboto', sans-serif; 
+    text-decoration: none;
+  }
